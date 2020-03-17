@@ -84,26 +84,30 @@ class Cartitem extends React.Component{
 
     render()
    {
-
+    console.log(this.props);
 
     return (
 
-        <div className="cart-item">
+        
+
+        <div className="cart-item" style={
+            {display:"block" , leftMargin:-20 }
+        }>
 
        
-       <div className="left-block">
+       <div className="left">
         <h2> Left Block</h2>
        </div>
 
-       <div className="right-block" >
+       <div className="right" >
        <h2> Cart</h2>
 
-       <div style={ {color:'#777'}}> Phone {this.state.title} </div>
+       <div style={ {color:'#777'}}> Phone {this.props.title} </div>
 
-       <div style= {   styles.div }  >Price{this.state.price}</div>
+       <div style= {   styles.div }  >Price{this.props.price}</div>
 
 
-       <div style= {   styles.div }  >quantity{this.state.qnty}</div>
+       <div style= {   styles.div }  >quantity{this.props.qnty}</div>
 
 
 
@@ -143,6 +147,7 @@ const styles={
 div:{
  
     color:'red'
+    
 
 },
   
