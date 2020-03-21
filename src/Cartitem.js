@@ -48,6 +48,8 @@ class Cartitem extends React.Component{
 
     increaseqnty=()=>
     {
+
+        
         console.log("test");
 
           
@@ -86,6 +88,8 @@ class Cartitem extends React.Component{
    {
     console.log(this.props);
 
+    const  { title, qnty , price}= this.props.product;
+
     return (
 
         
@@ -102,12 +106,12 @@ class Cartitem extends React.Component{
        <div className="right" >
        <h2> Cart</h2>
 
-       <div style={ {color:'#777'}}> Phone {this.props.title} </div>
+       <div style={ {color:'#777'}}> Phone {title} </div>
 
-       <div style= {   styles.div }  >Price{this.props.price}</div>
+       <div style= {   styles.div }  >Price{price}</div>
 
 
-       <div style= {   styles.div }  >quantity{this.props.qnty}</div>
+       <div style= {   styles.div }  >quantity{qnty}</div>
 
 
 
@@ -118,15 +122,17 @@ class Cartitem extends React.Component{
 
        <div className="class-item-action">
 
-       <img src="https://image.flaticon.com/icons/svg/2089/2089588.svg" style={ styles.img }
-       onClick={ this.increaseqnty }
-       />
+       <img src="https://image.flaticon.com/icons/svg/2089/2089588.svg" style={ styles.img }  onClick={()=>this.props.onIncrease(this.props.product)}/>
    
        <img src="https://image.flaticon.com/icons/svg/1665/1665612.svg" style={ styles.img }  onClick={this.minusqnty}>
        </img>
 
-       </div>
+       <img src="  https://image.flaticon.com/icons/svg/1345/1345823.svg" style={ styles.img }  onClick={this.minusqnty} 
+        onClick={()=>this.props.del(this.props.product)}>
+       </img>
 
+       </div> 
+      
        </div>
 
 
